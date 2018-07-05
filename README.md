@@ -1,9 +1,8 @@
 # USF
 ## USF-File format, parser for Java
 
+[![Build Status](https://travis-ci.com/kimbtech/USF.svg?branch=master)](https://travis-ci.com/kimbtech/USF)
+
 A JSON-like file format allowing to store basic data types in Lists, Pairs.
 
->
-> Parser works quite good, but is unpublished until now.
-> This will follow soon.
->
+See [JavaDoc](https://kimbtech.github.io/USF/)
