@@ -1,0 +1,12 @@
+language: java
+branches:
+  only:
+    - "master"
+script: mvn javadoc:javadoc && mvn test
+deploy:
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    local-dir: "target/site/apidocs/"
+    skip-cleanup: true
+    on:
+      branch: master
