@@ -5,4 +5,4 @@
 
 A JSON-like file format allowing to store basic data types in Lists, Pairs.
 
-See [JavaDoc](https://kimbtech.github.io/USF/)
+See [JavaDoc](https://kimbtech.github.io/USF/).
