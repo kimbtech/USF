@@ -10,4 +10,4 @@ deploy:
     skip-cleanup: true
     on:
       branch: master
-after_success: mvn jacoco:report coveralls:jacoco
+after_success: mvn jacoco:report coveralls:report

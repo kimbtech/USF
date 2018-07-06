@@ -11,6 +11,20 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<description>USF-File format, parser for Java</description>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>KIMBtech</name>
+			<email>info[at]kimb-technologies(dot)eu</email>
+		</developer>
+	</developers>
 	<build>
 		<finalName>usf</finalName>
 		<plugins>
@@ -43,14 +57,8 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.eluder.coveralls</groupId>
-				<artifactId>coveralls-maven-plugin</artifactId>
-				<version>3.0.1</version>
-			</plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.2.201409121644</version>
 				<executions>
 					<execution>
 						<id>pre-unit-test</id>
@@ -81,6 +89,11 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>4.3.0</version>
 			</plugin>
 		</plugins>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
