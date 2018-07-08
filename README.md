@@ -1,9 +1,31 @@
 # USF
-## USF-File format, parser for Java
+*Undead(Game)StorageFormat*
+## USF-File format – parser for Java
 
 [![Build Status](https://travis-ci.com/kimbtech/USF.svg?branch=master)](https://travis-ci.com/kimbtech/USF)
 [![Coverage Status](https://coveralls.io/repos/github/kimbtech/USF/badge.svg?branch=master)](https://coveralls.io/github/kimbtech/USF?branch=master)
 
-A JSON-like file format allowing to store basic data types in Lists, Pairs.
+USF is a JSON-like file format allowing to store basic data types in Lists,
+Pairs and multiple nesting of these.
 
-See [JavaDoc](https://kimbtech.github.io/USF/).
+See the Wiki [Wiki](https://github.com/kimbtech/USF/wiki) for examples and [JavaDoc](https://kimbtech.github.io/USF/) for
+documentation.
+
+## Data-Types
+All USF-Data-Types are subclasses of the main USF-Data-Type called `Atom`.
+
+- Basic Data Types
+  - String
+  - Boolean
+  - Integer
+  - Float *soon*
+- Structures
+  - List
+    - combining multiple Atoms
+  - Pair
+    - combining two Atoms
+- Higher Level Types  
+  - MapList
+    - combining multiple Key-Value pairs
+
+
