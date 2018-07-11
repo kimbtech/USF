@@ -6,6 +6,11 @@
 	<packaging>jar</packaging>
 	<name>usf</name>
 	<url>https://github.com/kimbtech/USF</url>
+	<inceptionYear>2018</inceptionYear>
+	<organization>
+		<name>KIMB-technologies</name>
+		<url>https://github.com/kimbtech</url>
+	</organization>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
