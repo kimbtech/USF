@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.kimb-technologies</groupId>
 	<artifactId>usf</artifactId>
-	<version>0.5.0</version>
+	<version>0.5.1</version>
 	<packaging>jar</packaging>
 	<name>usf</name>
 	<url>https://github.com/kimbtech/USF</url>
