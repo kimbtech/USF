@@ -2,7 +2,7 @@ language: java
 branches:
   only:
     - "master"
-script: mvn javadoc:javadoc && mvn test
+script: mvn javadoc:javadoc && mvn package
 deploy:
   - provider: pages
     github-token: $GITHUB_TOKEN
@@ -10,4 +10,11 @@ deploy:
     skip-cleanup: true
     on:
       branch: master
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file: "target/usf.jar"
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: kimbtech/SwE
 after_success: mvn jacoco:report coveralls:report
