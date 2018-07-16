@@ -8,7 +8,7 @@
 USF is a JSON-like file format allowing to store basic data types in Lists,
 Pairs and multiple nesting of these.
 
-See the Wiki [Wiki](https://github.com/kimbtech/USF/wiki) for examples and [JavaDoc](https://kimbtech.github.io/USF/) for
+See the [Wiki](https://github.com/kimbtech/USF/wiki) for examples and [JavaDoc](https://kimbtech.github.io/USF/) for
 documentation.
 
 ## Data-Types
