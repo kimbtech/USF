@@ -16,5 +16,5 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
-      repo: kimbtech/SwE
+      repo: kimbtech/USF
 after_success: mvn jacoco:report coveralls:report
