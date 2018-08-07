@@ -56,6 +56,10 @@ public class USFParser {
 			//String
 			return new USFString().loadUSF(usf);
 		}
+		else if( first == '=' && last == '=' ){
+			//Real
+			return new Real().loadUSF(usf);
+		}
 		else if( usf.equals( "true" ) || usf.equals( "false" ) ){
 			//Bool
 			return new Bool().loadUSF(usf);
