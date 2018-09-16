@@ -43,23 +43,21 @@ class RealTest {
 	@Test
 	@DisplayName("USF Export Test")
 	public void testToUSF() {
-		/*
-		assertEquals( iPlus.toUSF(), "100" );
-		assertEquals( iMinus.toUSF(), "-992" );
-		assertEquals( iNull.toUSF(), "0" );
-		*/
+		assertEquals( iPlus.toUSF(), "=100.11=" );
+		assertEquals( iMinus.toUSF(), "=-100.025=" );
+		assertEquals( iNull.toUSF(), "=0.0=" );
 	}
 	
 	@Test
 	@DisplayName("USF Import Test")
 	public void testLoadUSF() throws USFSyntaxException {
-		/*
-		iNull.loadUSF("+20");
-		iPlus.loadUSF("20");
-		iMinus.loadUSF("-2");
-		assertEquals(iNull.getValue(), iPlus.getValue());
-		assertEquals(iMinus.getValue(), -2);
-		*/
+		iMinus.loadUSF("=-1.0E-4=");
+		iNull.loadUSF("=0.0=");
+		iPlus.loadUSF("=112.025=");
+		
+		assertEquals(iNull.getValue(), 0.0);
+		assertEquals(iPlus.getValue(), 112.025);
+		assertEquals(iMinus.getValue(), -0.0001);
 	}
 	
 	@Test
@@ -83,11 +81,10 @@ class RealTest {
 	
 	@Test
 	@DisplayName("Equals Test")
-	public void testEquals() {
-		/*
-		assertTrue( iPlus.equals( new USFInteger(100) ) );
-		assertFalse( iMinus.equals( new Integer(100) ) );
-		*/
+	public void testEquals() throws USFSyntaxException {
+		assertTrue( iPlus.equals( new Real(100.110) ) );
+		assertFalse( iMinus.equals( new Real(-110.025) ) );
+		assertEquals( new Real(), iNull );
 	}
 	
 	@Test
