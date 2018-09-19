@@ -18,14 +18,15 @@ All USF-Data-Types are subclasses of the main USF-Data-Type called `Atom`.
   - String
   - Boolean
   - Integer
-  - Float *soon*
+  - Real
+    - a double data type
 - Structures
   - List
     - combining multiple Atoms
   - Pair
     - combining two Atoms
 - Higher Level Types  
-  - MapList *soon*
+  - MapList
     - combining multiple Key-Value pairs
 
 
