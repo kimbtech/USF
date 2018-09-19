@@ -22,4 +22,10 @@ public abstract class Atom {
 	
 	@Override
 	public abstract boolean equals( Object o );
+	
+	@Override
+	public String toString() {
+		//human friendly print
+		return this.toUSF();
+	}
 }

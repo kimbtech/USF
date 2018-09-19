@@ -33,4 +33,11 @@ class AtomTest {
 		assertFalse( a1.equals( a4 ) );
 		assertFalse( a4.equals( new String("aa") ) );
 	}
+	
+	@Test
+	@DisplayName("Test toString")
+	public void testToString() {
+		assertEquals( a1.toString(), a1.toUSF() );
+		assertEquals( a4.toString(), a4.toUSF() );
+	}
 }
