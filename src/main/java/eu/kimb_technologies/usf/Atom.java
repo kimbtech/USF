@@ -35,4 +35,10 @@ public abstract class Atom {
 		//human friendly print
 		return this.toUSF();
 	}
+	
+	@Override
+	public int hashCode() {
+		//don't use any memory places to identify USF objects
+        return this.toUSF().hashCode();
+    }
 }
