@@ -26,6 +26,55 @@ public class USFParser {
 	}
 	
 	/**
+	 * Exports a given Atom to human friendly USF.
+	 * @param usf The atom that's supposed to become a usf
+	 * @return the USF (human friendly) String
+	 */
+	public static String toHumFrieUSF( Atom usf ){
+		return usf.toHumFrieUSF( 0 );
+	}
+	
+	/**
+	 * Parser for human friendly usf strings 
+	 * @param usf the usf String to parse (can be a normal or a human friendly one)
+	 * @return the Atom data
+	 */
+	public static Atom parseHumFrie(String usf) throws USFSyntaxException {
+		StringBuilder builder = new StringBuilder( usf.length() );
+		try{
+			//init vars, to walk trough string
+			char bst = 0, bstBefore = 0;
+			int index;
+			//not in a String (you can only be in one String)
+			boolean inString = false;
+			
+			//starting after [ and ending before ]
+			for (index = 0; index < usf.length(); index++) {
+				bst = usf.charAt(index);
+				bstBefore = index > 0 ? usf.charAt(index-1) : 0;
+								
+				//go in String and leave string
+				if( bst == '"' && bstBefore != '\\') { inString = !inString; }				
+				
+				// if in string, add all
+				if( inString ) {
+					builder.append( bst );
+				}
+				else if( !( bst == '\n' || bst == '\t' || bst == '\r' ) ) {
+					builder.append( bst );
+				}
+			}
+			if( inString ) {
+				throw new USFSyntaxException("String not ended!");
+			}
+		}
+		catch( Exception e ) {
+			throw new USFSyntaxException("Unable to parse human friendly data.");
+		}
+		return USFParser.parse(builder.toString());
+	}
+	
+	/**
 	 * Exports a given Class to USF
 	 * @param usf The USFSaveable that's supposed to be exported to usf
 	 * @return the USF String
@@ -36,7 +85,7 @@ public class USFParser {
 	
 	/**
 	 * Parses a given in String in USF to Atom data
-	 * @param usf the given String
+	 * @param usf the given String (must not be human friendly!)
 	 * @return the Atom data
 	 * @throws USFSyntaxException if syntax error in string
 	 */
@@ -75,7 +124,7 @@ public class USFParser {
 	
 	/**
 	 * Reads a USF File to Memory and return its content
-	 * @param filename The absolute path to the USF file
+	 * @param filename The absolute path to the USF file (must not be human friendly usf contents!)
 	 * @return Data the parsed data
 	 * @throws USFSyntaxException Get's thrown if the Syntax of the file is not valid
 	 * @throws IOException Get's thrown if the file can't be found
@@ -86,7 +135,7 @@ public class USFParser {
 	
 	/**
 	 * Parses a USF File given as Stream
-	 * @param stream the input Stream
+	 * @param stream the input Stream (must not be human friendly usf contents!)
 	 * @return the USF as Atom
 	 * @throws USFSyntaxException if syntax error in file
 	 */

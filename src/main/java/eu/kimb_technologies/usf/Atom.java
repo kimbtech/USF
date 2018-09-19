@@ -13,6 +13,13 @@ public abstract class Atom {
 	public abstract String toUSF();
 	
 	/**
+	 * Exports the current data in this Atom to a parseable, human friendly String.
+	 * @param the indention of the data
+	 * @return the parseable String (human friendly parseable)
+	 */
+	public abstract String toHumFrieUSF( int indent );
+	
+	/**
 	 * Imports data from an parseable Atom String.
 	 * @param usf the String to parse
 	 * @return the Atom data

@@ -48,6 +48,11 @@ public class Real extends Atom implements Comparable<Double> {
 	public String toUSF() {
 		return "=" + Double.toString( this.val ) + "=";
 	}
+	
+	@Override
+	public String toHumFrieUSF(int indent) {
+		return USFString.stringRepeat(indent, "\t") + this.toUSF();
+	}
 
 	/**
 	 * Read a valid USFString

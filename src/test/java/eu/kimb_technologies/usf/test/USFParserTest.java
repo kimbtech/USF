@@ -34,6 +34,13 @@ class USFParserTest {
 		assertEquals(array[6], new Real(1.0));
 		assertEquals(array[7], new Real(-11.02));
 	}
+	
+	@Test
+	@DisplayName("Human Friendly Export")
+	public void testHumFrie() throws USFSyntaxException {
+		this.data = USFParser.parse("[true,[false,100,20,-12,{\"test\":{\"a\":false}},{{:}:{[true,true]:-12}}],=1.0=,=-11.02=]");
+		this.data.equals( USFParser.parseHumFrie( USFParser.toHumFrieUSF( this.data ) ) );
+	}
 
 	@Test
 	@DisplayName("File test")

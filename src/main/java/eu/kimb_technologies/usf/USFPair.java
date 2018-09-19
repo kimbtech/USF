@@ -57,6 +57,21 @@ public class USFPair extends Atom {
 			return "{:}";
 		}
 	}
+	
+	@Override
+	public String toHumFrieUSF( int indent ) {		
+		if( this.name != null && this.val != null ){
+			return
+					USFString.stringRepeat(indent, "\t") + "{\r\n"
+					+ this.name.toHumFrieUSF(indent + 1) + "\r\n"
+					+ USFString.stringRepeat(indent, "\t") + ":\r\n"
+					+ this.val.toHumFrieUSF( indent + 1 ) + "\r\n"
+					+ USFString.stringRepeat(indent, "\t") + "}";
+		}
+		else{
+			return USFString.stringRepeat(indent, "\t") + "{:}";
+		}
+	}
 
 	/**
 	 * Loads USF-String and returns Atom (Pair)
@@ -138,8 +153,7 @@ public class USFPair extends Atom {
 	public boolean equals(Object a){
 		// is an Pair?
 		if( a instanceof USFPair){
-			//check name an val
-			return this.getName().equals( ((USFPair) a).getName() ) && this.getValue().equals(((USFPair) a).getValue());
+			return ((USFPair) a).toUSF().equals( this.toUSF() );
 		}
 		else{
 			//no pair => not equal

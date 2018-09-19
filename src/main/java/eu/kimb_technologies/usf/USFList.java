@@ -39,6 +39,21 @@ public class USFList extends Atom implements List<Atom> {
 		}
 		return usf.concat( "]" );
 	}
+	
+	@Override
+	public String toHumFrieUSF( int indent ) {
+		String usf = USFString.stringRepeat(indent, "\t") + "[\r\n";
+		indent++;
+		for( Atom element : this.list  ){
+			usf = usf.concat( element.toHumFrieUSF(indent) + ",\r\n" );
+		}
+		//remove last ,
+		if( usf.length() > 2){
+			usf = usf.substring(0, usf.length() - 3) + "\r\n";
+		}
+		indent--;
+		return usf.concat( USFString.stringRepeat(indent, "\t") + "]" );
+	}
 
 	@Override
 	public Atom loadUSF(String usf) throws USFSyntaxException {

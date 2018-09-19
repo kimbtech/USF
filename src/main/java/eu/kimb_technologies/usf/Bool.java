@@ -48,6 +48,11 @@ public class Bool extends Atom implements Comparable<Boolean>{
 	public String toUSF() {
 		return this.val ? "true" : "false";
 	}
+	
+	@Override
+	public String toHumFrieUSF(int indent) {
+		return USFString.stringRepeat(indent, "\t") + this.toUSF();
+	}
 
 	/**
 	 * Read a valid USFString

@@ -49,6 +49,11 @@ public class USFString extends Atom {
 	public String toUSF() {
 		return USFString.escapeString(this.val);
 	}
+	
+	@Override
+	public String toHumFrieUSF(int indent) {
+		return USFString.stringRepeat(indent, "\t") + this.toUSF();
+	}
 
 	/**
 	 * Read a valid USFString
@@ -184,5 +189,15 @@ public class USFString extends Atom {
 			//no string => not equal
 			return false;
 		}
+	}
+	
+	/**
+	 * Generates a string outof String repeat repeated times often.
+	 * @param times the number of repeats
+	 * @param repeat the string to repeat
+	 * @return the string (repeat)^times
+	 */
+	public static String stringRepeat( int times, String repeat ) {
+		return new String(new char[times]).replace("\0", repeat );
 	}
 }

@@ -48,6 +48,11 @@ public class USFInteger extends Atom implements Comparable<Integer> {
 	public String toUSF() {
 		return Integer.toString(this.val);
 	}
+	
+	@Override
+	public String toHumFrieUSF(int indent) {
+		return USFString.stringRepeat(indent, "\t") + this.toUSF();
+	}
 
 	/**
 	 * Read a valid USFString
