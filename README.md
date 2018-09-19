@@ -29,4 +29,48 @@ All USF-Data-Types are subclasses of the main USF-Data-Type called `Atom`.
   - MapList
     - combining multiple Key-Value pairs
 
+## USF Format
+The normal USF Format is a one-line string, which contains all the data.
 
+```
+[true,[false,100,20,-12,{\"test\":{\"a\":false}},{{:}:{[true,true]:-12}}],=1.0=,=-11.02=]
+```
+For debugging and other cases one can use the human friendly output.
+(Method `toHumFrieUSF()` instead of `toUSF()` and `parseHumFrie()` instead of `parse()`)
+
+```
+[
+	true,
+	[
+		false,
+		100,
+		20,
+		-12,
+		{
+			"test"
+		:
+			{
+				"a"
+			:
+				false
+			}
+		},
+		{
+			{:}
+		:
+			{
+				[
+					true,
+					true
+				]
+			:
+				-12
+			}
+		}
+	],
+	=1.0=,
+	=-11.02=
+]
+```
+
+	 
