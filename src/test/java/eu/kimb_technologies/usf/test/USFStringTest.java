@@ -54,7 +54,7 @@ class USFStringTest {
 	@DisplayName("USF Escape and Unescape Test")
 	public void unAndEscapeTest() {
 		String[] arr = {
-				"shdad \\ adfs",
+				"shdad \\ adfs \n",
 				"\"Hallo\" HHüüh \t \r dd++üä",
 				"FF_🇫🇷_FF",
 				"",

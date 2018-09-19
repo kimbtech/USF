@@ -69,7 +69,7 @@ public class Real extends Atom implements Comparable<Double> {
 	
 	@Override
 	public int compareTo(Double o) {
-		return o.compareTo( this.val );
+		return ((Double) this.val).compareTo( o );
 	}
 	
 	//Object

@@ -71,6 +71,15 @@ class USFListTest {
 	}
 	
 	@Test
+	@DisplayName("Equals")
+	public void testEquals() throws USFSyntaxException {
+		assertFalse( main.equals( new String("aa") ) );
+		assertFalse( main.equals( second ) );
+		main = (USFList) main.loadUSF("[{\"Haus\":[\"B\\\"lu\",{100:200},true]},2001,true,[true,true]]");
+		assertTrue( main.equals( second ) );
+	}
+	
+	@Test
 	@DisplayName("implements List tests")
 	public void lists() {
 		Bool[] boo = {new Bool(), new Bool()};

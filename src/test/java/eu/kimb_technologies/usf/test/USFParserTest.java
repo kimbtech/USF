@@ -17,7 +17,7 @@ class USFParserTest {
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		this.data = USFParser.parse("[true,false,100,20,-12,{\"test\":{\"a\":false}}]");
+		this.data = USFParser.parse("[true,false,100,20,-12,{\"test\":{\"a\":false}},=1.0=,=-11.02=]");
 	}
 
 	@Test
@@ -31,6 +31,8 @@ class USFParserTest {
 		assertEquals(array[3], new USFInteger(20));
 		assertEquals(array[4], new USFInteger(-12));
 		assertEquals(array[5], new USFPair().loadUSF("{\"test\":{\"a\":false}}"));
+		assertEquals(array[6], new Real(1.0));
+		assertEquals(array[7], new Real(-11.02));
 	}
 
 	@Test
@@ -43,7 +45,7 @@ class USFParserTest {
 
 		Atom data = USFParser.loadFromFile(System.getProperty("user.home") + "/testfile.usf");
 		
-		assertEquals( data.toUSF() , "[true,false,100,20,-12,{\"test\":{\"a\":false}}]");
+		assertEquals( data.toUSF() , "[true,false,100,20,-12,{\"test\":{\"a\":false}},=1.0=,=-11.02=]");
 		
 		//delete test file
 		new File( System.getProperty("user.home") + "/testfile.usf" ).delete();

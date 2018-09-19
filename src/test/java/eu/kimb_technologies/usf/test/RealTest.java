@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import eu.kimb_technologies.usf.Bool;
 import eu.kimb_technologies.usf.Real;
 import eu.kimb_technologies.usf.USFSyntaxException;
 
@@ -63,20 +64,21 @@ class RealTest {
 	@Test
 	@DisplayName("USF Import Exception Test")
 	public void testLoadUSFEx(){
-		/*
 		assertThrows(USFSyntaxException.class,()->{
-			iNull.loadUSF("2");
+			iNull.loadUSF("2.0"); // should be =2.0=
 		});
 		assertThrows(USFSyntaxException.class,()->{
-			iNull.loadUSF("\"234\"");
+			iNull.loadUSF("*2");
 		});
 		assertThrows(USFSyntaxException.class,()->{
-			iNull.loadUSF("  33 ");
+			iNull.loadUSF("234,12");
 		});
 		assertThrows(USFSyntaxException.class,()->{
-			iNull.loadUSF("33E2");
+			iNull.loadUSF("  33- ");
 		});
-		*/
+		assertThrows(USFSyntaxException.class,()->{
+			iNull.loadUSF("3.3.2");
+		});
 	}
 	
 	@Test
@@ -85,15 +87,14 @@ class RealTest {
 		assertTrue( iPlus.equals( new Real(100.110) ) );
 		assertFalse( iMinus.equals( new Real(-110.025) ) );
 		assertEquals( new Real(), iNull );
+		assertFalse( iMinus.equals( new Double(12.0) ) );
 	}
 	
 	@Test
 	@DisplayName("Compare To Test")
 	public void testCompareTo() {
-		/*
-		assertEquals( iPlus.compareTo( new Integer(-100) ), (new Integer(100) ).compareTo( new Integer(-100) ) );
-		assertEquals( iMinus.compareTo( new Integer(-992) ), (new Integer(-992) ).compareTo( new Integer(-992) ) );
-		*/
+		assertEquals( iPlus.compareTo( new Double(-110) ), (new Double(100.110) ).compareTo( new Double(-110) ) );
+		assertEquals( iMinus.compareTo( new Double(-992) ), (new Double(-100.025) ).compareTo( new Double(-992) ) );
 	}
 	
 	@Test
