@@ -5,11 +5,11 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>usf</name>
-	<url>https://github.com/kimbtech/USF</url>
+	<url>https://github.com/KIMB-technologies/USF</url>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
 		<name>KIMB-technologies</name>
-		<url>https://github.com/kimbtech</url>
+		<url>https://github.com/KIMB-technologies</url>
 	</organization>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -26,7 +26,7 @@
 	</licenses>
 	<developers>
 		<developer>
-			<name>KIMBtech</name>
+			<name>KIMB-technologies</name>
 			<email>info[at]kimb-technologies(dot)eu</email>
 		</developer>
 	</developers>
