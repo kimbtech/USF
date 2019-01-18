@@ -3,7 +3,7 @@
 ## USF-File format – parser for Java
 
 [![Build Status](https://travis-ci.com/kimbtech/USF.svg?branch=master)](https://travis-ci.com/kimbtech/USF)
-[![Coverage Status](https://proxy.5d7.eu/coveralls/?repo=kimbtech%2FUSF&branch=master)](https://coveralls.io/github/kimbtech/USF?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kimbtech/USF/badge.svg?branch=master)](https://coveralls.io/github/kimbtech/USF?branch=master)
 
 USF is a JSON-like file format allowing to store basic data types in Lists,
 Pairs and multiple nesting of these.
