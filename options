@@ -1,0 +1,22 @@
+-encoding
+'UTF-8'
+-private
+-sourcepath
+'/home/travis/build/kimbtech/USF/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2018&#x2013;2019 <a href="https://github.com/KIMB-technologies">KIMB-technologies</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/travis/build/kimbtech/USF/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'usf 1.0.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/travis/build/kimbtech/USF/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'usf 1.0.0 API'
